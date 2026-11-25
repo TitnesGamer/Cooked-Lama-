@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Cooked Lama</title>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+       font-family:sans-serif;background:#0f1115;color:#fff;text-align:center}
+  .box{padding:24px}
+  a.btn{display:inline-block;margin-top:18px;padding:14px 28px;border-radius:12px;
+        background:#175FD5;color:#fff;text-decoration:none;font-weight:bold}
+  small{display:block;margin-top:16px;color:#999;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="box">
+  <h2 id="title">Opening Cooked Lama…</h2>
+  <a id="open" class="btn" href="#">Open in App</a>
+  <small>Tap the button if the app does not open.<br>
+  In Telegram: ⋮ menu → "Open in browser".</small>
+</div>
+<script>
+  // https://titnesgamer.github.io/Cooked-Lama-/games?x=1  ->  cookedlama://games?x=1
+  var path = location.pathname
+      .replace(/^\/Cooked-Lama-/i, '')   // remove the repo folder name
+      .replace(/^\/+|\/+$/g, '');
+  if (path === 'index.html' || path === '404.html') path = '';
+
+  var rest = (path || 'main') + location.search;
+  var scheme = 'cookedlama://' + rest;
+  // No package= here, so Chrome never jumps to Play Store
+  var intentUrl = 'intent://' + rest + '#Intent;scheme=cookedlama;end';
+
+  var target = /android/i.test(navigator.userAgent) ? intentUrl : scheme;
+
+  document.getElementById('open').setAttribute('href', target);
+  setTimeout(function () { location.href = target; }, 300);
+  setTimeout(function () {
+    document.getElementById('title').textContent = 'App not opening? Tap the button.';
+  }, 2500);
+</script>
+</body>
+</html>
