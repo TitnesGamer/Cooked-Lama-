@@ -3,155 +3,342 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cooked Lama – Explore More. Enjoy More. Do More.</title>
-<meta name="description" content="Movies, web series, anime, games, AI assistant, market tools and rewards — all in one app.">
-<meta name="theme-color" content="#ffffff">
+<title>Cooked Lama – Explore More. Enjoy More. Discover More.</title>
+<meta name="description" content="Cooked Lama is an all-in-one app for movies, web series, anime, online games, an AI assistant, market tools, rewards and more. Join us on Telegram.">
+<meta name="theme-color" content="#fafbff">
+<meta property="og:title" content="Cooked Lama – Your All-in-One Entertainment & Digital Experience">
+<meta property="og:description" content="Movies, anime, games, AI assistant, market tools, rewards and referrals in one modern app.">
+<meta property="og:image" content="https://i.ibb.co/mVzJBpjf/20261126-045617.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --blue:#2F5FD0; --sky:#4F9FD6; --pink:#E8336D; --yellow:#FFD23F;
-  --lime:#DCEB6A; --green:#4CA36F; --purple:#5F63E0; --orange:#F4A23A;
-  --ink:#14161f; --muted:#667085; --bg:#ffffff;
-  --glass:rgba(255,255,255,.55); --glass-b:rgba(255,255,255,.85);
-}
+:root{--bg:#fafbff;--ink:#12142a;--mute:#5d6385;--line:rgba(18,20,42,.09);--blue:#2F5FD0;--sky:#4F9FD6;--indigo:#5F63E0;--pink:#E8336D;--lime:#DCEB6A;--green:#4CA36F;--gold:#F4A23A;
+--card:#fff;--sh:0 24px 60px -28px rgba(47,63,140,.35);--r:28px;--px:'Pixelify Sans',monospace;--sans:'Plus Jakarta Sans',system-ui,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{min-height:100%}
-body{
-  font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg);
-  min-height:100vh;display:flex;align-items:center;justify-content:center;overflow-x:hidden;
-  padding:max(24px,env(safe-area-inset-top)) 20px max(24px,env(safe-area-inset-bottom));
-  position:relative;
-}
-/* soft app-colour light blobs */
-.blob{position:fixed;border-radius:50%;filter:blur(80px);opacity:.55;z-index:0;animation:float 14s ease-in-out infinite alternate}
-.b1{width:380px;height:380px;background:var(--sky);top:-120px;left:-100px}
-.b2{width:340px;height:340px;background:var(--pink);top:10%;right:-120px;opacity:.35;animation-delay:-4s}
-.b3{width:360px;height:360px;background:var(--lime);bottom:-140px;left:20%;animation-delay:-8s}
-.b4{width:260px;height:260px;background:var(--purple);bottom:5%;right:5%;opacity:.3;animation-delay:-2s}
-@keyframes float{to{transform:translate(30px,-30px) scale(1.08)}}
-body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:linear-gradient(rgba(47,95,208,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(47,95,208,.05) 1px,transparent 1px);
-  background-size:40px 40px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
-
-.hero{
-  position:relative;z-index:1;width:100%;max-width:1080px;
-  background:var(--glass);backdrop-filter:blur(28px) saturate(170%);-webkit-backdrop-filter:blur(28px) saturate(170%);
-  border:1px solid var(--glass-b);border-radius:36px;
-  box-shadow:0 30px 80px -20px rgba(47,95,208,.28),inset 0 1px 0 rgba(255,255,255,.9);
-  padding:clamp(24px,5vw,56px);
-  display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;
-}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;
-  background:rgba(255,255,255,.7);border:1px solid rgba(47,95,208,.15);
-  font-size:13px;font-weight:600;color:var(--blue);margin-bottom:20px}
-.badge i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(76,163,111,.2)}
-h1{font-family:'Pixelify Sans',monospace;font-weight:700;font-size:clamp(40px,7vw,76px);line-height:1;letter-spacing:-.5px}
-h1 .g{background:linear-gradient(90deg,var(--blue),var(--purple) 50%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
-.tag{font-family:'Pixelify Sans',monospace;font-size:clamp(15px,2.2vw,20px);margin-top:14px;color:var(--green)}
-.desc{margin-top:18px;color:var(--muted);font-size:clamp(15px,1.8vw,17px);line-height:1.65;max-width:520px}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-.chip{padding:9px 14px;border-radius:14px;font-size:13.5px;font-weight:600;
-  background:rgba(255,255,255,.75);border:1px solid rgba(20,22,31,.07);
-  box-shadow:0 6px 16px -8px rgba(20,22,31,.18);transition:.25s}
-.chip:hover{transform:translateY(-3px)}
-.cta{margin-top:32px;display:flex;flex-wrap:wrap;gap:18px;align-items:center}
-.btn{
-  display:inline-flex;align-items:center;gap:12px;background:var(--blue);color:var(--yellow);
-  font-family:'Pixelify Sans',monospace;font-weight:700;font-size:19px;letter-spacing:1px;text-transform:uppercase;
-  padding:17px 30px;text-decoration:none;box-shadow:6px 6px 0 #000;transition:.15s;
-}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);overflow-x:hidden;line-height:1.65;padding-bottom:env(safe-area-inset-bottom)}
+a{color:inherit}img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--indigo);outline-offset:3px;border-radius:8px}
+.aurora{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.aurora i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.38;animation:drift 18s ease-in-out infinite alternate}
+.aurora i:nth-child(1){width:44vw;height:44vw;background:var(--sky);top:-14vw;left:-10vw}
+.aurora i:nth-child(2){width:36vw;height:36vw;background:#f7a6c4;top:22%;right:-12vw;opacity:.28;animation-delay:-6s}
+.aurora i:nth-child(3){width:42vw;height:42vw;background:var(--lime);bottom:-16vw;left:20%;opacity:.45;animation-delay:-11s}
+@keyframes drift{to{transform:translate(4vw,-3vw) scale(1.1)}}
+.grid{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(47,95,208,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(47,95,208,.05) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse at 50% 15%,#000 15%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 15%,#000 15%,transparent 70%)}
+.spot{position:fixed;width:480px;height:480px;margin:-240px 0 0 -240px;border-radius:50%;z-index:0;pointer-events:none;background:radial-gradient(circle,rgba(95,99,224,.13),transparent 65%);left:50%;top:30%}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--blue),var(--indigo),var(--pink),var(--gold))}
+main,header,footer{position:relative;z-index:1}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+nav{position:sticky;top:12px;z-index:50;margin-top:12px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 20px;border-radius:999px;background:rgba(255,255,255,.75);border:1px solid var(--line);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);box-shadow:0 14px 40px -18px rgba(47,63,140,.35)}
+.brand{font-family:var(--px);font-weight:700;font-size:21px;text-decoration:none}
+.links{display:flex;gap:4px}
+.links a{padding:8px 13px;border-radius:999px;font-size:14px;font-weight:600;color:var(--mute);text-decoration:none;transition:.2s}
+.links a:hover{color:var(--ink);background:rgba(95,99,224,.09)}
+.pillbtn{padding:10px 18px;border-radius:999px;background:var(--ink);color:#fff;font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:72px 0 56px}
+.badge{display:inline-flex;align-items:center;gap:9px;padding:8px 15px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:700;color:var(--indigo);box-shadow:0 8px 20px -12px rgba(47,63,140,.4)}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--green);animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(76,163,111,.55)}100%{box-shadow:0 0 0 10px rgba(76,163,111,0)}}
+h1{font-family:var(--px);font-size:clamp(46px,8vw,92px);line-height:.98;margin:22px 0 14px;font-weight:700}
+.shine{background:linear-gradient(100deg,var(--blue),var(--indigo),var(--pink),var(--gold),var(--blue));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
+@keyframes shine{to{background-position:300% 0}}
+.tag{font-family:var(--px);font-size:clamp(17px,2.4vw,23px);color:var(--green);min-height:1.5em}
+.tag b{font-weight:500;border-right:2px solid var(--green);padding-right:3px;animation:blink .8s steps(1) infinite}
+@keyframes blink{50%{border-color:transparent}}
+.lead{margin-top:18px;color:var(--mute);font-size:clamp(15px,1.8vw,17.5px);max-width:540px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;align-items:center}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:12px;padding:17px 28px;border:0;cursor:pointer;background:var(--blue);color:#FFD23F;font-family:var(--px);font-weight:700;font-size:19px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;box-shadow:6px 6px 0 #000;transition:.15s}
 .btn:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 #000}
-.btn span{color:#fff;font-family:sans-serif}
-.tg{color:var(--sky);font-weight:700;text-decoration:none;font-size:15px}
-.tg:hover{text-decoration:underline}
-
-/* phone mockup */
-.phone-wrap{display:flex;justify-content:center;position:relative}
-.phone{
-  width:100%;max-width:290px;border-radius:40px;padding:12px;
-  background:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.9);
-  backdrop-filter:blur(14px);box-shadow:0 30px 60px -20px rgba(20,22,31,.3);
-  animation:bob 6s ease-in-out infinite alternate;
-}
-@keyframes bob{to{transform:translateY(-12px) rotate(-1deg)}}
-.screen{border-radius:30px;overflow:hidden;background:linear-gradient(180deg,#e3f06f 0,#f6f9d8 42%,#fff 70%);padding:22px 18px 18px}
-.s-title{font-family:'Pixelify Sans',monospace;font-size:24px;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.12)}
-.s-label{font-family:'Pixelify Sans',monospace;font-size:12px;color:#7d8a22;margin-top:6px}
-.s-bal{font-family:'Pixelify Sans',monospace;font-size:38px;color:#9aa13a;margin:2px 0 14px}
-.hexes{display:flex;gap:8px;justify-content:space-between;margin-bottom:16px}
-.hexes b{width:38px;height:42px;display:grid;place-items:center;font-size:16px;background:rgba(255,255,255,.75);
-  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
-.pill{height:30px;border-radius:99px;background:#ddd;position:relative;overflow:hidden;margin-bottom:12px}
-.pill::after{content:"";position:absolute;inset:0 70% 0 0;background:var(--green);border-radius:99px}
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.cd{border-radius:16px;padding:12px;font-family:'Pixelify Sans',monospace;color:#fff;font-size:12px}
-.cd em{display:block;font-style:normal;font-size:20px;margin-top:8px}
-.c1{background:#a9e8a2}.c2{background:#d6c8fb}.c3{background:#f8d1b0}.c4{background:#b6e0fa}
-.float{position:absolute;padding:10px 14px;border-radius:16px;font-size:13px;font-weight:700;
-  background:var(--glass);backdrop-filter:blur(14px);border:1px solid var(--glass-b);box-shadow:0 14px 30px -12px rgba(20,22,31,.3)}
-.f1{top:8%;left:-6%;animation:bob 5s ease-in-out infinite alternate}
-.f2{bottom:14%;right:-4%;animation:bob 7s ease-in-out infinite alternate-reverse}
-
-footer{margin-top:0;grid-column:1/-1;text-align:center;font-size:12.5px;color:var(--muted);padding-top:6px;border-top:1px solid rgba(20,22,31,.06)}
-footer a{color:var(--blue);font-weight:700;text-decoration:none}
-
-@media(max-width:860px){
-  .hero{grid-template-columns:1fr;gap:32px;text-align:center;border-radius:28px}
-  .desc{margin-inline:auto}.chips,.cta{justify-content:center}
-  .f1{left:2%}.f2{right:2%}
-}
-@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+.btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:sweep 3.5s infinite}
+@keyframes sweep{to{left:140%}}
+.btn span{color:#fff}
+.ghost{display:inline-flex;align-items:center;gap:8px;padding:15px 22px;border-radius:16px;background:#fff;border:1px solid var(--line);font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 10px 24px -16px rgba(47,63,140,.5);transition:.2s}
+.ghost:hover{transform:translateY(-3px);border-color:rgba(95,99,224,.4)}
+.help{display:none;margin-top:18px;padding:16px 18px;border-radius:18px;background:#fff8e1;border:1px solid #f1d27a;font-size:14px;color:#6b5200;max-width:540px;text-align:left}
+.help.on{display:block;animation:pop .4s}
+.help strong{display:block;margin-bottom:4px}
+.help .row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.help button{font:700 13px var(--sans);padding:9px 14px;border-radius:10px;border:1px solid #e6c765;background:#fff;color:var(--ink);cursor:pointer}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.97)}}
+.seq{opacity:0;transform:translateY(22px);animation:in .8s cubic-bezier(.2,.8,.2,1) forwards}
+.seq:nth-child(2){animation-delay:.1s}.seq:nth-child(3){animation-delay:.2s}.seq:nth-child(4){animation-delay:.3s}.seq:nth-child(5){animation-delay:.4s}.seq:nth-child(6){animation-delay:.5s}
+@keyframes in{to{opacity:1;transform:none}}
+.stage{position:relative;display:flex;justify-content:center;perspective:1200px}
+.phone{width:min(300px,78vw);aspect-ratio:9/19;border-radius:46px;padding:9px;background:#14162a;box-shadow:0 50px 80px -30px rgba(47,63,140,.55),inset 0 0 0 2px #3b3f63;transition:transform .15s;animation:bob 6s ease-in-out infinite alternate}
+@keyframes bob{to{translate:0 -14px}}
+.phone .scr{width:100%;height:100%;border-radius:38px;overflow:hidden;background:#eef0fb}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:top}
+.fl{position:absolute;padding:10px 15px;border-radius:16px;font-size:13px;font-weight:700;background:rgba(255,255,255,.85);border:1px solid var(--line);backdrop-filter:blur(14px);box-shadow:0 16px 30px -14px rgba(47,63,140,.5);animation:bob 5s ease-in-out infinite alternate}
+.fl.a{top:9%;left:0}.fl.b{bottom:16%;right:0;animation-duration:7s;animation-direction:alternate-reverse}.fl.c{bottom:4%;left:6%;animation-duration:6s}
+.marq{overflow:hidden;border-block:1px solid var(--line);background:rgba(255,255,255,.7);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marq div{display:flex;gap:44px;width:max-content;padding:16px 0;animation:mq 32s linear infinite;font-family:var(--px);font-size:20px;color:var(--mute)}
+.marq:hover div{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:88px 0}
+.head{max-width:680px;margin-bottom:44px}
+h2{font-family:var(--px);font-size:clamp(30px,4.6vw,50px);line-height:1.05;font-weight:700}
+.head p{margin-top:14px;color:var(--mute);font-size:17px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{position:relative;padding:26px;border-radius:var(--r);background:var(--card);border:1px solid var(--line);box-shadow:var(--sh);overflow:hidden;transition:transform .3s,border-color .3s}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),rgba(95,99,224,.13),transparent 60%);opacity:0;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:rgba(95,99,224,.35)}
+.card:hover::before{opacity:1}
+.card.wide{grid-column:span 2}
+.ico{width:50px;height:50px;border-radius:16px;display:grid;place-items:center;font-size:25px;margin-bottom:16px;position:relative}
+.card h3{font-size:18px;font-weight:800;position:relative}
+.card p{margin-top:8px;color:var(--mute);font-size:14.5px;position:relative}
+.card ul{margin:12px 0 0 18px;color:var(--mute);font-size:14px;position:relative}
+.note{margin-top:12px;font-size:12.5px;font-weight:600;color:#8a6a00;background:#fff6d6;border-radius:10px;padding:8px 12px;position:relative}
+.gal{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 20px 34px;margin-inline:-20px;scrollbar-width:thin;scrollbar-color:var(--indigo) transparent}
+.shot{flex:0 0 auto;width:min(230px,62vw);scroll-snap-align:center;border:0;background:none;cursor:zoom-in;transition:transform .3s}
+.shot:hover{transform:translateY(-8px) rotate(-1deg)}
+.shot .fr{aspect-ratio:9/19;border-radius:34px;padding:7px;background:#14162a;box-shadow:0 30px 50px -26px rgba(47,63,140,.6)}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:27px;background:#eef0fb}
+.why{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.why div{display:flex;gap:12px;align-items:center;padding:16px 20px;border-radius:18px;background:var(--card);border:1px solid var(--line);font-weight:700;font-size:15px}
+.why div::before{content:"✓";display:grid;place-items:center;flex:0 0 28px;height:28px;border-radius:50%;background:var(--lime);color:#3b4300;font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+.step{counter-increment:s;padding:28px;border-radius:var(--r);background:var(--card);border:1px solid var(--line);box-shadow:var(--sh)}
+.step::before{content:counter(s);display:grid;place-items:center;width:42px;height:42px;margin-bottom:14px;font-family:var(--px);font-size:20px;background:var(--blue);color:#FFD23F;box-shadow:3px 3px 0 #000}
+.step h3{font-size:18px}.step p{color:var(--mute);font-size:14.5px;margin-top:6px}
+.pol{display:flex;flex-wrap:wrap;gap:10px}
+.pol span{padding:10px 16px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:14px;font-weight:600;transition:.2s}
+.pol span:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
+.comm{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cc{display:flex;flex-direction:column;gap:14px;align-items:flex-start;padding:32px;border-radius:var(--r);border:1px solid var(--line);background:linear-gradient(135deg,#e8f4fc,#fff);box-shadow:var(--sh)}
+.cc:nth-child(2){background:linear-gradient(135deg,#eceefe,#f6fadc)}
+.cc h3{font-family:var(--px);font-size:26px}.cc p{color:var(--mute)}
+details{border-radius:20px;background:var(--card);border:1px solid var(--line);margin-bottom:12px;overflow:hidden}
+summary{cursor:pointer;list-style:none;padding:20px 24px;font-weight:700;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:22px;color:var(--indigo);transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 24px 22px;color:var(--mute);animation:pop .35s}
+footer{border-top:1px solid var(--line);padding:36px 0 44px;color:var(--mute);font-size:14px;background:rgba(255,255,255,.6)}
+.fr2{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
+footer a,footer button{font:700 14px var(--sans);color:var(--ink);text-decoration:none;margin-right:18px;background:none;border:0;cursor:pointer}
+.fine{margin-top:14px;font-size:12.5px;max-width:760px}
+dialog{margin:auto;border:1px solid var(--line);border-radius:26px;background:#fff;color:var(--ink);width:min(780px,calc(100% - 28px));max-height:86vh;padding:0;box-shadow:0 40px 120px -20px rgba(18,20,42,.5)}
+dialog::backdrop{background:rgba(18,20,42,.55);backdrop-filter:blur(8px)}
+dialog[open]{animation:pop .35s}
+.dh{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;padding:18px 26px;background:#fff;border-bottom:1px solid var(--line)}
+.dh h3{font-family:var(--px);font-size:26px}
+.x{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:18px;cursor:pointer}
+.db{padding:8px 26px 30px;overflow:auto;max-height:calc(86vh - 76px)}
+.db h4{margin:22px 0 6px;font-size:16px;color:var(--indigo)}
+.db p,.db li{color:#454b6e;font-size:14.5px}.db ul{margin:6px 0 0 20px}
+#lb{background:transparent;border:0;width:min(420px,92vw);box-shadow:none;overflow:visible}
+#lb img{width:100%;max-height:82vh;object-fit:contain;border-radius:22px;background:#fff}
+.nv{position:absolute;top:50%;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:20px;cursor:pointer;box-shadow:0 8px 20px -8px #000}
+#pv{left:-14px}#nx{right:-14px}#lx{position:absolute;top:-14px;right:-14px}
+.toast{position:fixed;left:50%;bottom:24px;translate:-50% 140%;z-index:90;padding:12px 20px;border-radius:14px;background:var(--ink);color:#fff;font-weight:700;font-size:14px;transition:translate .4s}
+.toast.on{translate:-50% 0}
+@media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center;padding-top:44px}.lead{margin-inline:auto}.cta{justify-content:center}.help{margin-inline:auto}
+.feat{grid-template-columns:1fr 1fr}.card.wide{grid-column:span 2}.steps,.comm{grid-template-columns:1fr}.links{display:none}}
+@media(max-width:560px){.feat,.why{grid-template-columns:1fr}.card.wide{grid-column:auto}.fl.c{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.seq,.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div>
+<div id="bar"></div>
+<div class="aurora"><i></i><i></i><i></i></div><div class="grid"></div><div class="spot" id="spot"></div>
 
-<main class="hero">
-  <section>
-    <div class="badge"><i></i> 🦙 All-in-one entertainment app</div>
-    <h1>Cooked <span class="g">Lama</span></h1>
-    <p class="tag">Explore More. Enjoy More. Do More.</p>
-    <p class="desc">Movies, web series, anime, cartoons, online games, trending content, market tools, AI assistance and rewards — all through one simple, modern app.</p>
-    <div class="chips">
-      <span class="chip">🎬 Movies &amp; Anime</span>
-      <span class="chip">🎮 Online Games</span>
-      <span class="chip">🤖 AI Assistant</span>
-      <span class="chip">📈 Market Tools</span>
-      <span class="chip">🎁 Rewards</span>
-      <span class="chip">💎 Premium</span>
-    </div>
-    <div class="cta">
-      <a id="open" class="btn" href="#">Open in App <span>→</span></a>
-      <a class="tg" href="#" id="tg">Join Telegram →</a>
-    </div>
-    <p id="status" class="desc" style="font-size:13px;margin-top:14px"></p>
-  </section>
+<header><div class="wrap"><nav><div class="nav">
+<a class="brand" href="#top">🦙 Cooked Lama</a>
+<div class="links"><a href="#features">Features</a><a href="#screens">Screens</a><a href="#trust">Policies</a><a href="#community">Community</a><a href="#faq">FAQ</a></div>
+<a class="pillbtn" id="navOpen" href="#">Open app</a>
+</div></nav></div></header>
 
-  <section class="phone-wrap" aria-hidden="true">
-    <div class="phone"><div class="screen">
-      <div class="s-title">COOKED LAMA</div>
-      <div class="s-label">Available Squat Balance</div>
-      <div class="s-bal">34.85</div>
-      <div class="hexes"><b>⚡</b><b>👤</b><b>🤖</b><b>🔐</b><b>📶</b></div>
-      <div class="pill"></div>
-      <div class="cards">
-        <div class="cd c1">TOTAL<em>34.85</em></div>
-        <div class="cd c2">CONTENT<em>172</em></div>
-        <div class="cd c3">GAMES<em>🎮</em></div>
-        <div class="cd c4">REWARDS<em>🎁</em></div>
-      </div>
-    </div></div>
-    <div class="float f1">🔥 Trending now</div>
-    <div class="float f2">✅ Verified</div>
-  </section>
+<main id="top">
+<div class="wrap hero">
+<div>
+<p class="badge seq"><i></i> 🦙 Your all-in-one entertainment &amp; digital experience</p>
+<h1 class="seq">Cooked <span class="shine">Lama</span></h1>
+<p class="tag seq"><b id="type">Explore More.</b></p>
+<p class="lead seq">One modern app for movies, web series, anime, cartoons, online games, an AI assistant, market tools, rewards and referrals. Clean, smooth and easy to use. Tap any shared link and it opens right inside Cooked Lama.</p>
+<div class="cta seq">
+<a id="open" class="btn" href="#">Open in App <span>→</span></a>
+<a class="ghost" href="https://t.me/cookedlama" target="_blank" rel="noopener">✈️ Join Telegram</a>
+<a class="ghost" href="https://t.me/CookedLamaBot" target="_blank" rel="noopener">🤖 @CookedLamaBot</a>
+</div>
+<p id="status" class="fine" style="font-size:13px;margin-top:14px"></p>
+</div>
+<div class="stage seq" id="stage">
+<div class="phone" id="phone"><div class="scr"><img id="heroShot" alt="Cooked Lama app screen" width="300" height="633"></div></div>
+<div class="fl a">🔥 Trending now</div><div class="fl b">🎁 Rewards inside</div><div class="fl c">🤖 AI assistant</div>
+</div>
+</div>
 
-  <footer>
-    <a href="#" id="privacy">Privacy Policy</a> · © 2026 Cooked Lama. All rights reserved.
-  </footer>
+<div class="marq" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="about"><div class="wrap" style="max-width:860px">
+<div class="head rv"><h2>Built for people who love to explore</h2></div>
+<p class="rv" style="color:var(--mute);font-size:17px">Cooked Lama is a modern all-in-one digital platform that brings entertainment, discovery, smart tools, gaming and AI-powered experiences together in one convenient place. Whether you are searching for your next movie, exploring anime, playing browser games, checking market trends or chatting with the AI assistant, everything lives in a single app with a clean, easy-to-use interface, so you stop switching between apps.</p>
+</div></section>
+
+<section id="features" style="padding-top:20px"><div class="wrap">
+<div class="head rv"><h2>Everything inside Cooked Lama</h2><p>Each feature is designed to be simple, useful and enjoyable.</p></div>
+<div class="feat" id="feat"></div>
+</div></section>
+
+<section id="screens"><div class="wrap">
+<div class="head rv"><h2>See it in action</h2><p>Swipe through real screens from the app. Tap any screen to enlarge it.</p></div>
+<div class="gal" id="gal" tabindex="0" aria-label="App screenshots"></div>
+</div></section>
+
+<section id="why"><div class="wrap">
+<div class="head rv"><h2>Why Cooked Lama?</h2></div>
+<div class="why" id="whyList"></div>
+</div></section>
+
+<section id="how"><div class="wrap">
+<div class="head rv"><h2>Start in three steps</h2></div>
+<div class="steps">
+<div class="step rv"><h3>Install the app</h3><p>Get Cooked Lama from the official Telegram channel so you always have the latest version.</p></div>
+<div class="step rv"><h3>Open any shared link</h3><p>Links to games, content or tools open straight in the app. No searching, no copy and paste.</p></div>
+<div class="step rv"><h3>Explore and earn</h3><p>Pick up where you left off, try the AI assistant, invite friends and check eligible rewards.</p></div>
+</div></div></section>
+
+<section id="trust"><div class="wrap">
+<div class="head rv"><h2>Clear policies, built into the app</h2><p>Cooked Lama includes 19 policy pages inside the app so you always know the rules and your controls, including an option to delete your Lama data.</p></div>
+<div class="pol rv" id="pol"></div>
+<p class="fine rv">Market tools are for informational and educational purposes and are not financial advice. Rewards, referral programs and Premium features vary by eligibility, availability and program rules. Read the <a href="#privacy" data-priv style="color:var(--indigo);font-weight:700">Privacy Policy</a> for details.</p>
+</div></section>
+
+<section id="community"><div class="wrap">
+<div class="head rv"><h2>Join the community</h2><p>Announcements, game updates, reward information and important news all live on Telegram.</p></div>
+<div class="comm">
+<div class="cc rv"><h3>Official Channel</h3><p>Get the latest announcements, updates and news from Cooked Lama first.</p><a class="ghost" href="https://t.me/cookedlama" target="_blank" rel="noopener">Join Telegram Channel</a></div>
+<div class="cc rv"><h3>Customer Support Bot</h3><p>Need help or want to report an issue? Message @CookedLamaBot.</p><a class="ghost" href="https://t.me/CookedLamaBot" target="_blank" rel="noopener">Open @CookedLamaBot</a></div>
+</div></div></section>
+
+<section id="faq"><div class="wrap" style="max-width:820px">
+<div class="head rv"><h2>Questions, answered</h2></div>
+<details class="rv"><summary>The “Open in App” button does nothing. What now?</summary><p>Confirm the app is installed, then tap the button again. Telegram, Instagram and Facebook use built-in browsers that can block app links: tap the ⋮ menu and choose “Open in browser”, then tap “Open in App” again.</p></details>
+<details class="rv"><summary>What can I find inside Cooked Lama?</summary><p>Movies, web series, anime, cartoons, online games, smart search, an AI assistant, market tools, rewards, referrals, watch history, Continue Watching and Premium options.</p></details>
+<details class="rv"><summary>Is Cooked Lama free?</summary><p>You can explore the app for free. Premium plans may unlock extra features, and plan details, pricing and benefits are shown in the app.</p></details>
+<details class="rv"><summary>How do rewards and referrals work?</summary><p>Eligible activities and invitations may earn rewards. Availability and conditions vary by eligibility and program rules, and they are explained in the app and on the Telegram channel.</p></details>
+<details class="rv"><summary>Are the market tools financial advice?</summary><p>No. Market tools are for informational and educational purposes only. Always do your own research.</p></details>
+<details class="rv"><summary>Which devices are supported?</summary><p>Cooked Lama is built for Android. The website works everywhere, but opening the app needs an Android phone with the app installed.</p></details>
+<details class="rv"><summary>How do I delete my data or get support?</summary><p>Use “Delete All Lama Data” in the app’s policy section, or message @CookedLamaBot on Telegram with your request.</p></details>
+</div></section>
 </main>
 
+<footer><div class="wrap">
+<div class="fr2">
+<div><button data-priv>Privacy Policy</button><a href="https://t.me/cookedlama" target="_blank" rel="noopener">Channel</a><a href="https://t.me/CookedLamaBot" target="_blank" rel="noopener">Bot</a></div>
+<div>© 2026 Cooked Lama. All rights reserved.</div></div>
+<p class="fine">🦙 Cooked Lama – Explore More. Enjoy More. Discover More. One app. Multiple experiences. Endless possibilities.</p>
+</div></footer>
+
+<dialog id="pp" aria-labelledby="ppt">
+<div class="dh"><h3 id="ppt">Privacy Policy</h3><button class="x" data-close aria-label="Close">✕</button></div>
+<div class="db">
+<p style="margin-top:16px">Effective date: November 26, 2026. This policy explains how Cooked Lama (“we”, “the app”, “the site”) handles information when you use our app and website.</p>
+<h4>1. Information we collect</h4>
+<ul><li>Information you give us, such as messages you send to our Telegram bot.</li><li>Profile and preference data inside the app, such as watch history, Continue Watching, favorites and settings.</li><li>Basic technical data such as device model, Android version, app version and crash logs.</li><li>Usage data such as which features you open.</li><li>Content you enter in the app, for example AI assistant prompts.</li><li>Referral and reward activity needed to check eligibility.</li></ul>
+<h4>2. How we use information</h4>
+<ul><li>To run, maintain and improve Cooked Lama.</li><li>To personalize recommendations and keep your history organized.</li><li>To provide support and respond to reports.</li><li>To operate rewards, referrals and Premium features.</li><li>To detect abuse, spam, fraud and security problems.</li></ul>
+<h4>3. Permissions</h4>
+<p>The app requests only the permissions needed for its features, such as internet access and notifications. You can review or revoke permissions in your Android settings at any time.</p>
+<h4>4. AI assistant</h4>
+<p>Prompts you send to the AI assistant may be processed by third-party AI providers to create a reply. Do not share passwords, payment details or other sensitive information in AI chats. AI answers can be wrong, so check important information yourself.</p>
+<h4>5. Third-party services and content</h4>
+<p>The app and site may use services such as Telegram, content and video hosts, game providers, analytics, advertising, payment and AI providers. They have their own privacy policies. Some content shown in the app is provided by third parties.</p>
+<h4>6. Advertising</h4>
+<p>If ads are shown, advertising partners may use device identifiers to show relevant ads. You can reset or limit your Android advertising ID in system settings.</p>
+<h4>7. Payments and subscriptions</h4>
+<p>If you buy Premium, payments are handled by the payment provider shown at checkout. We do not store full card numbers. Pricing, renewal, cancellation and refund terms are shown with the plan details.</p>
+<h4>8. Data sharing</h4>
+<p>We do not sell your personal information. We share data only with service providers that help run the app, when required by law, or to protect users and the app from abuse.</p>
+<h4>9. Security</h4>
+<p>We use reasonable technical measures to protect information. No method of transmission or storage is completely secure, so we cannot guarantee absolute security.</p>
+<h4>10. Data retention and deletion</h4>
+<p>We keep information only as long as needed for the purposes above. You can use “Delete All Lama Data” in the app or message @CookedLamaBot on Telegram to ask for access or deletion.</p>
+<h4>11. Cookies on the website</h4>
+<p>This website may use basic browser storage and cookies from third-party fonts or hosting. We do not use them to identify you personally.</p>
+<h4>12. Children</h4>
+<p>Cooked Lama is not directed to children under 13. If you believe a child has given us personal information, contact us and we will remove it.</p>
+<h4>13. Rewards and market tools notice</h4>
+<p>Rewards and balances have no guaranteed cash value unless stated in the app, and programs may change or end. Market tools are informational and educational only and are not financial advice.</p>
+<h4>14. Changes to this policy</h4>
+<p>We may update this policy. The effective date above shows the latest version. Continued use after an update means you accept it.</p>
+<h4>15. Contact</h4>
+<p>Telegram bot: @CookedLamaBot · Channel: t.me/cookedlama</p>
+</div>
+</dialog>
+
+<dialog id="lb" aria-label="Screenshot viewer">
+<button class="nv" id="lx" aria-label="Close" data-close>✕</button>
+<button class="nv" id="pv" aria-label="Previous">‹</button><button class="nv" id="nx" aria-label="Next">›</button>
+<img id="lbi" alt="Cooked Lama screenshot enlarged">
+</dialog>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+var $=function(s,c){return(c||document).querySelector(s)};
+var IMGS=["https://i.ibb.co/mVzJBpjf/20261126-045617.png","https://i.ibb.co/6JbSrRWL/20261126-045528.png","https://i.ibb.co/TBBjpzWY/20261126-045507.png","https://i.ibb.co/VcQrcWTL/20261126-045457.png","https://i.ibb.co/cVNVgFt/20261126-045444.png","https://i.ibb.co/jZ8P6zNC/20261126-044955.png","https://i.ibb.co/QFHYQ1Qp/20261126-044944.png","https://i.ibb.co/gcH6QQf/20261126-044917.png","https://i.ibb.co/k6DmNjm8/20261126-044858.png","https://i.ibb.co/FLJLHrMH/20261126-044822.png"];
+var FEATS=[
+["🎬","Entertainment & discovery","Explore movies, web series, anime, cartoons and more from different categories. Popular titles, new content and recommendations make it simple to find something to watch.","#e6edff",1,["Movies and web series","Anime, cartoons and animation","Trending and recommended content"]],
+["🔍","Smart search","Find movies, series, anime and games faster. Check popular searches and trending content, and spend less time searching.","#e3f4fb"],
+["🎮","Online games","Browse casual, arcade, puzzle and action browser games, with simple categories and easy discovery.","#e4f6ea"],
+["🤖","AI assistant","Ask questions, explore ideas, learn new things and get help with everyday tasks through a simple chat.","#ecebfd",1,["General knowledge and explanations","Creative ideas and problem solving"]],
+["📈","Market tools & screeners","Explore market categories, assets and available data with tools that make exploring easier.","#fff2d6",0,0,"Informational and educational only. Not financial advice."],
+["🎁","Rewards & benefits","Discover reward-related activities and promotions, with clearly explained conditions and eligibility.","#f3f8cf",0,0,"Rewards vary by eligibility, availability and program rules."],
+["👥","Referral & invite system","Share Cooked Lama with friends, track eligible invitations and join available promotions.","#fde4ee"],
+["👤","Personalized experience","Keep your experience organized and easy to return to.","#e9e9fb",1,["Profiles and app preferences","Watch history and favorites","Recently explored content and recommendations"]],
+["▶️","Continue Watching","Return to what you opened before without searching for the same title again.","#e3f4fb"],
+["💎","Premium","Unlock extra tools and exclusive experiences with a subscription plan. Pricing and benefits are shown with each plan.","#fdebd3"],
+["✨","Modern, smooth UI","A clean layout, smooth navigation and a consistent design built around simplicity and visual comfort.","#e6edff"],
+["🚀","Always evolving","New features, tools, categories and improvements are planned over time and announced on Telegram.","#e4f6ea"]];
+var f=$('#feat');
+FEATS.forEach(function(a){var d=document.createElement('div');d.className='card rv'+(a[4]?' wide':'');
+d.innerHTML='<div class="ico" style="background:'+a[3]+'">'+a[0]+'</div><h3>'+a[1]+'</h3><p>'+a[2]+'</p>'+(a[5]?'<ul><li>'+a[5].join('</li><li>')+'</li></ul>':'')+(a[6]?'<div class="note">'+a[6]+'</div>':'');
+d.addEventListener('pointermove',function(e){var r=d.getBoundingClientRect();d.style.setProperty('--mx',e.clientX-r.left+'px');d.style.setProperty('--my',e.clientY-r.top+'px')});f.appendChild(d)});
+var WH=['Multiple experiences in one app','Entertainment discovery','Movies, web series, anime and cartoons','Online gaming experiences','Smart search','AI-powered assistance','Market tools and screeners','Rewards and referral features','Personalized experience','Watch history and Continue Watching','Premium features','Modern, smooth interface','Continuously evolving platform'];
+$('#whyList').innerHTML=WH.map(function(t){return'<div class="rv">'+t+'</div>'}).join('');
+var PO=['Terms of Service','Disclaimer','Acceptable Use','Copyright','Privacy Policy','Permissions','Data Retention','Account Deletion','Data Sharing','Security','Cookies','AI Usage','AI Safety','Third-Party Services','Payments','Refunds','Subscriptions','Community Guidelines','Contact Us'];
+$('#pol').innerHTML=PO.map(function(t){return'<span>'+t+'</span>'}).join('');
+var W=['🎬 Movies','🎌 Anime','🎮 Games','🤖 AI Assistant','📈 Market Tools','🎁 Rewards','👥 Referrals','💎 Premium'],h='';
+for(var i=0;i<2;i++)W.forEach(function(w){h+='<span>'+w+'</span>'});$('#mq').innerHTML=h;
+var hs=$('#heroShot');hs.src=IMGS[0];hs.onerror=function(){hs.style.display='none'};
+var g=$('#gal');
+IMGS.forEach(function(u,i){var b=document.createElement('button');b.className='shot';b.setAttribute('aria-label','Open screenshot '+(i+1));
+b.innerHTML='<div class="fr"><img loading="lazy" alt="Cooked Lama app screenshot '+(i+1)+'" src="'+u+'"></div>';b.onclick=function(){show(i)};g.appendChild(b)});
+var lb=$('#lb'),li=$('#lbi'),cur=0;
+function show(i){cur=(i+IMGS.length)%IMGS.length;li.src=IMGS[cur];if(!lb.open)lb.showModal()}
+$('#pv').onclick=function(){show(cur-1)};$('#nx').onclick=function(){show(cur+1)};
+lb.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+var tx=0;lb.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',function(e){var d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)show(cur+(d<0?1:-1))});
+lb.addEventListener('click',function(e){if(e.target===lb)lb.close()});
+document.querySelectorAll('[data-close]').forEach(function(b){b.onclick=function(){b.closest('dialog').close()}});
+var pp=$('#pp');
+function openPP(){if(!pp.open)pp.showModal()}
+document.querySelectorAll('[data-priv]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();openPP()})});
+pp.addEventListener('click',function(e){if(e.target===pp)pp.close()});
+if(location.hash==='#privacy')openPP();
+var T=['Explore More.','Enjoy More.','Discover More.'],ti=0,ci=0,del=0,el=$('#type');
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){el.textContent='Explore More. Enjoy More. Discover More.'}
+else{(function tick(){var s=T[ti];if(!del){ci++;if(ci===s.length){del=1;return setTimeout(tick,1600)}}else{ci--;if(ci===0){del=0;ti=(ti+1)%T.length}}el.textContent=s.slice(0,ci)||'\u00a0';setTimeout(tick,del?40:85)})()}
+var bar=$('#bar');
+addEventListener('scroll',function(){var m=document.documentElement.scrollHeight-innerHeight;bar.style.width=(m>0?scrollY/m*100:0)+'%'},{passive:true});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(n,i){n.style.transitionDelay=(i%3)*70+'ms';io.observe(n)});
+var sp=$('#spot'),ph=$('#phone');
+addEventListener('pointermove',function(e){sp.style.left=e.clientX+'px';sp.style.top=e.clientY+'px'},{passive:true});
+$('#stage').addEventListener('pointermove',function(e){var r=this.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;ph.style.transform='rotateY('+x*14+'deg) rotateX('+-y*10+'deg)'});
+$('#stage').addEventListener('pointerleave',function(){ph.style.transform=''});
+var tt=$('#toast');function toast(m){tt.textContent=m;tt.classList.add('on');setTimeout(function(){tt.classList.remove('on')},2400)}
+
+})();
+</script>
 <script>
   // https://titnesgamer.github.io/Cooked-Lama-/games?x=1  ->  cookedlama://games?x=1
   var path = location.pathname
@@ -166,6 +353,7 @@ footer a{color:var(--blue);font-weight:700;text-decoration:none}
   var target = /android/i.test(navigator.userAgent) ? intentUrl : scheme;
 
   document.getElementById('open').setAttribute('href', target);
+  document.getElementById('navOpen').setAttribute('href', target);
 
   // Shared deep links (/games?x=1) open the app automatically; the plain home page just shows the site.
   if (path || location.search) {
